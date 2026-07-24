@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+// Base class 1
+class Father
+{
+public:
+    void fatherProperty()
+    {
+        cout << "Father's Property" << endl;
+    }
+};
+
+// Base class 2
+class Mother
+{
+public:
+    void motherProperty()
+    {
+        cout << "Mother's Property" << endl;
+    }
+};
+
+// Derived class inheriting from Father and Mother
+class Child : public Father, public Mother
+{
+public:
+    void display()
+    {
+        cout << "Child inherits from both Father and Mother" << endl;
+    }
+};
+
+int main()
+{
+    Child obj;
+
+    obj.fatherProperty();
+    obj.motherProperty();
+    obj.display();
+
+    return 0;
+}
