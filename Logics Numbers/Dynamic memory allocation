@@ -1,0 +1,19 @@
+#include <iostream>
+#include <new>
+using namespace std;
+
+int main()
+{
+    try
+    {
+        int *p = new int[1000000000];
+        delete[] p;
+        cout << "Memory allocated successfully";
+    }
+    catch(bad_alloc &e)
+    {
+        cout << "Memory allocation failed";
+    }
+
+    return 0;
+}
