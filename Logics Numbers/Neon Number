@@ -1,0 +1,43 @@
+Formula
+If Sum of digits of (number²) = Number
+→ Neon Number
+Example 1: 9
+Step 1: Square the number
+9² = 81
+Step 2: Add the digits of the square
+8 + 1 = 9
+Step 3: Compare
+9 = 9
+
+✅ 9 is a Neon Number.
+
+Program
+import java.util.Scanner;
+
+public class NeonNumber {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int square = num * num;
+        int sum = 0;
+
+        while (square > 0) {
+            int digit = square % 10;
+            sum += digit;
+            square = square / 10;
+        }
+
+        if (sum == num) {
+            System.out.println(num + " is a Neon Number.");
+        } else {
+            System.out.println(num + " is NOT a Neon Number.");
+        }
+
+        sc.close();
+    }
+}

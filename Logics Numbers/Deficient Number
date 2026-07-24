@@ -1,0 +1,54 @@
+Formula
+If sum of proper divisors < number
+→ Deficient Number
+Example 1: 8
+
+Proper divisors of 8:
+
+1, 2, 4
+
+Sum:
+
+1 + 2 + 4 = 7
+
+Compare:
+
+7 < 8
+
+✅ 8 is a Deficient Number.
+
+Program:
+import java.util.Scanner;
+
+public class DeficientNumber {
+
+    static int sumOfDivisors(int n) {
+        int sum = 1;
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                sum += i;
+            }
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int sum = sumOfDivisors(num);
+
+        if (sum < num) {
+            System.out.println(num + " is a Deficient Number.");
+        } else {
+            System.out.println(num + " is NOT a Deficient Number.");
+        }
+
+        sc.close();
+    }
+}

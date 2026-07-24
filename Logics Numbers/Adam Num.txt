@@ -1,0 +1,53 @@
+Example 1: 12
+Number = 12
+Square = 12 × 12 = 144
+Reverse of 12 = 21
+Square of 21 = 21 × 21 = 441
+Reverse of 144 = 441
+
+Since:
+
+Reverse(144) = 441
+21² = 441
+
+✅ 12 is an Adam Number.
+
+Program :
+import java.util.Scanner;
+
+public class AdamNumber {
+
+    // Method to reverse a number
+    static int reverse(int n) {
+        int rev = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            rev = rev * 10 + digit;
+            n = n / 10;
+        }
+
+        return rev;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int square = num * num;
+        int reverseNum = reverse(num);
+        int reverseSquare = reverse(square);
+        int reverseNumSquare = reverseNum * reverseNum;
+
+        if (reverseSquare == reverseNumSquare) {
+            System.out.println(num + " is an Adam Number.");
+        } else {
+            System.out.println(num + " is NOT an Adam Number.");
+        }
+
+        sc.close();
+    }
+}

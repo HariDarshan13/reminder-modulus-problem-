@@ -1,0 +1,42 @@
+Formula
+If (n + 1) is a perfect square
+→ Sunny Number
+Example 1: 8
+
+Step 1:
+
+n = 8
+n + 1 = 9
+
+Step 2:
+
+√9 = 3
+
+Since 3 × 3 = 9, 9 is a perfect square.
+
+✅ 8 is a Sunny Number.
+
+Program
+import java.util.Scanner;
+
+public class SunnyNumber {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int next = num + 1;
+        int root = (int) Math.sqrt(next);
+
+        if (root * root == next) {
+            System.out.println(num + " is a Sunny Number.");
+        } else {
+            System.out.println(num + " is NOT a Sunny Number.");
+        }
+
+        sc.close();
+    }
+}
